@@ -1,0 +1,12 @@
+
+function Worker() {
+	EUDPlayerLoop()();
+	const curPlayer = getcurpl();
+	
+	if ( curPlayer >= 0 && curPlayer < 2 ) {
+		const inven = _T.InvenT.cast(gInventory[curPlayer]);
+		if ( inven.delay > 0 ) {
+			inven.delay -= 1;
+		}
+	}
+}

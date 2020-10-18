@@ -1,0 +1,44 @@
+import customText3 as _CT;
+
+object ItemT {
+    var code; // item code
+    var name; // item string
+
+    var next; // next item pointer
+};
+
+object InvenT {
+    var isOpen; // open: 1, close: 0
+    var delay; // input delay
+
+    var items; // ItemT list first pointer
+};
+
+
+function CreateInvenT() {
+    return InvenT.alloc();
+}
+
+function ItemSet(item: ItemT, code, name) {
+    SetVariables(item.code, code);
+    SetVariables(item.name, name);
+}
+
+function GetLastItem(item: ItemT): ItemT{
+    var i = item;
+    while ( ItemT.cast(i).next != 0 ) {
+        i = item.next;
+    }
+    return i;
+}
+
+function ItemAdd(inven: InvenT, code, name) {
+    if ( inven.items == 0 ) {
+        inven.items = ItemT.alloc();
+        ItemSet(inven.items, code, name);
+    } else {
+        var item = GetLastItem(inven.items);
+        item.next = ItemT.alloc();
+        ItemSet(item.next, code, name);
+    }
+}

@@ -1,0 +1,24 @@
+import src.struct as _T;
+import customText3 as _CT;
+
+const gInventory = EUDArray(2);
+
+const strDB = [
+	Db("안녕"),
+	Db("하세요"),
+	Db("반가워요")
+];
+
+function onPluginStart() {
+	for ( var i=0; i<2; i++ ) {
+		gInventory[i] = _T.CreateInvenT();
+		_T.ItemAdd(gInventory[i], 1, strDB[0]);
+		_T.ItemAdd(gInventory[i], 2, strDB[1]);
+		_T.ItemAdd(gInventory[i], 3, strDB[2]);
+		_T.ItemListPrint(gInventory[i]);
+	}
+	//_CT.print(Db("당신에게 무언가를 지급했습니다."));
+}
+
+function afterTriggerExec() {
+}

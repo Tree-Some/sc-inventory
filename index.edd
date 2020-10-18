@@ -1,0 +1,13 @@
+[main]
+input: map\inventory.scx
+output: C:\Users\ifthe\Documents\StarCraft\Maps\Download\TEST\inventory.scx
+
+[src\main.eps]
+
+[MSQC]
+QCDebug: False
+`; 0x68C144, Exactly, 0 : Cantina (Unused), 1
+N; 0x68C144, Exactly, 0 : Cantina (Unused), 2
+P; 0x68C144, Exactly, 0 : Cantina (Unused), 4
+
+[eudTurbo]
